@@ -1,0 +1,23 @@
+@if(error$() | async; as error){
+<div class="error">
+  {{ error }}
+</div>
+} @if(data$() | async; as dataList){
+<div #grid class="grid">
+  <div class="grid-resize">
+    <ul class="grid-scroll no-scroll">
+      @for (data of dataList; track data.title){
+      <app-list-item
+        [title]="data.title"
+        [overView]="data.overview"
+        [releaseDate]="data.release_date"
+      />
+      } @empty {
+      <li>There are no items to display.</li>
+      }
+    </ul>
+  </div>
+</div>
+} @if((data$() | async)?.length === 0 ){
+<div class="no-movies">No movies found.</div>
+}

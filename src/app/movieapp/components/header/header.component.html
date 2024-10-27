@@ -1,0 +1,22 @@
+<header class="header">
+  <div class="logo">
+    <h2>Movie app</h2>
+  </div>
+  <div class="navigation">
+    <nav>
+      <a href="/" class="btn --primary" routerLink="/">Home</a>
+      <a href="/movies" class="btn --primary" routerLink="/movies">Movies</a>
+      <a href="/tv-shows" class="btn --primary" routerLink="/tv-shows"
+        >TV shows</a
+      >
+      <a href="/about" class="btn --primary" routerLink="/about">About</a>
+
+      <input
+        type="text"
+        class="input"
+        placeholder="Search"
+        (input)="onSearchInput($event)"
+      />
+    </nav>
+  </div>
+</header>

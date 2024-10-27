@@ -1,0 +1,40 @@
+.header{
+    background-color: black;
+    top: 0;
+    padding: 10px;
+    display: flex;
+    position: sticky;
+    z-index: 10;
+
+    .logo{
+        width: 40%;
+        margin: auto;
+
+        h2 {
+            width: max-content;
+            margin-left: 20px;
+            color: white;
+            font-size: xx-large;
+        }
+    }
+
+    .navigation{
+        width: 60%;
+        align-items: end;
+        padding: 10px;
+        
+        nav {
+            width: max-content;
+            margin: auto;
+
+            a {
+                color: white;
+            }
+
+            a:focus, a:hover {
+                color: gray;
+            }
+
+        }
+    }
+}

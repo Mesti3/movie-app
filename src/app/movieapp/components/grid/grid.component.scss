@@ -1,0 +1,32 @@
+.grid {
+  position: relative;
+  width: 100%;
+
+  .grid-resize {
+    width: 95%;
+    margin: auto;
+    height: 80vh;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      display: none; /* Hide the scrollbar on Chrome, Safari, and Opera */
+    }
+
+    &::-webkit-scrollbar-thumb {
+      display: none; /* Hide the scrollbar thumb on Chrome, Safari, and Opera */
+    }
+
+    &::-moz-scrollbar {
+      display: none; /* Hide the scrollbar on Firefox */
+    }
+
+    &::-moz-scrollbar-thumb {
+      display: none; /* Hide the scrollbar thumb on Firefox */
+    }
+
+    .grid-scroll {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+}
