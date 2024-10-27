@@ -1,0 +1,11 @@
+<div class="home no-scroll">
+<app-list [collectionName]="'Movies'" [data$]="movies$"  [error$]="error$" (loadNextPage)="handleLoadNextPage($event)"></app-list>
+<app-list [collectionName]="'TV-shows'" [data$]="tvshows$"  [error$]="error$"  (loadNextPage)="handleLoadNextPage($event)"></app-list>
+<app-list [collectionName]="'Popular movies'" [data$]="popularMovies$"  [error$]="error$"  (loadNextPage)="handleLoadNextPage($event)"></app-list>
+<app-list [collectionName]="'Popular TV-shows'" [data$]="popularTVShows$"  [error$]="error$"  (loadNextPage)="handleLoadNextPage($event)"></app-list>
+@if(popupData$ | async; as data  ){
+@if(data.visible){
+<app-pop-up [query]="data.query" (close)="closePopup()"></app-pop-up>
+}
+}
+</div>
