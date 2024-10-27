@@ -28,7 +28,7 @@ export class HomeComponent {
   protected  popularMovies$!: Observable<Movie[]>;
   protected  popularTVShows$!: Observable<TVShow[]>;
 
-  protected popupData$: Observable<{  visible: boolean,query?: string}>;
+  protected popupData$: Observable<{  visible: boolean,query?: string} | null>;
 
   constructor(private store: Store,private popupService: PopupService) {
     this.popupData$ = this.popupService.popupData$;

@@ -12,6 +12,7 @@ import { AboutComponent} from './pages/about/about.component';
 import { ListComponent} from './components/list/list.component';
 import { ListItemComponent } from './components/list-item/list-item.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   imports: [
@@ -27,7 +28,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     TvShowComponent,
     AboutComponent,
     ListComponent,
-    ListItemComponent
+    ListItemComponent,
+    BrowserAnimationsModule,
   ],
 })
 export class MovieAppModule {}

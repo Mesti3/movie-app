@@ -7,7 +7,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { movieReducer } from './app/movieapp/store/movies/movie.reducer';
 import { StoreModule } from '@ngrx/store';
-import { provideAnimations } from '@angular/platform-browser/animations';
+import {  provideAnimations } from '@angular/platform-browser/animations';
 import { MovieAppModule } from './app/movieapp/movieapp.module';
 import {
   withInterceptorsFromDi,

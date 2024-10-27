@@ -6,6 +6,7 @@ import { Observable, of } from 'rxjs';
 import * as MovieActions from '../../store/movies/movie.action';
 import { Movie } from '../../store/movies/movie.model';
 import { selectAllMovies, selectMoviesError } from '../../store/movies/movie.selector';
+import { CommonModule } from '@angular/common';
 
 describe('MoviesComponent', () => {
   let component: MoviesComponent;
@@ -20,7 +21,7 @@ describe('MoviesComponent', () => {
     };
 
     TestBed.configureTestingModule({
-      imports: [MoviesComponent, GridComponent],
+      imports: [MoviesComponent, GridComponent,CommonModule],
       providers: [
         { provide: Store, useValue: storeSpy }
       ],

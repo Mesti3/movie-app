@@ -27,4 +27,7 @@ export class TodoHomeComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  deleteTodo($event){
+    
+  }
 }

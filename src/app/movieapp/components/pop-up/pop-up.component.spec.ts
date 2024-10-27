@@ -4,6 +4,7 @@ import { provideMockStore, MockStore } from '@ngrx/store/testing';
 import * as SearchAction from '../../store/search/search.action';
 import { ComponentRef } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { CommonModule } from '@angular/common';
 
 describe('PopupComponent', () => {
   let component: PopupComponent;
@@ -23,7 +24,7 @@ describe('PopupComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PopupComponent],
+      imports: [PopupComponent,CommonModule],
       providers: [
         provideMockStore({ initialState }),
         { provide: Store, useValue: storeSpy }

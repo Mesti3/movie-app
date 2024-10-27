@@ -7,7 +7,7 @@ import { TvShowComponent } from './movieapp/pages/tv-show/tv-show.component';
 import { AboutComponent } from './movieapp/pages/about/about.component';
 
 const routes: Routes = [
-    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: '', redirectTo: 'tv-shows', pathMatch: 'full' },
     {
       path: 'home',
       component: HomeComponent

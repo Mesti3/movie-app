@@ -11,7 +11,7 @@ import { TVShow } from '../../store/tv-shows/tv-show.model';
   imports: [CommonModule, ListItemComponent],
   templateUrl: './grid.component.html',
   styleUrl: './grid.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GridComponent {
    data$ = input.required<Observable<Movie[] | TVShow[] | []>>();

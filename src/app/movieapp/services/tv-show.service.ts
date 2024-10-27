@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { catchError, Observable, throwError } from 'rxjs';
+import { Observable } from 'rxjs';
 import { TVShow } from '../store/tv-shows/tv-show.model';
 import { headers,baseUrl } from '../config/config';
 
