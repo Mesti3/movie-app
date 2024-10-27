@@ -15,10 +15,10 @@ import * as MovieActions from '../../store/movies/movie.action';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MoviesComponent {
-  movies$!: Observable<Movie[]| []>;
-  loading$!: Observable<boolean>;
-  error$!: Observable<string | null>;
-  currentPage$!: Observable<number>;
+  protected movies$!: Observable<Movie[]| []>;
+  protected loading$!: Observable<boolean>;
+  protected error$!: Observable<string | null>;
+  protected currentPage$!: Observable<number>;
 
   @ViewChild('scrollContainer', { static: true }) scrollContainer!: ElementRef;
 

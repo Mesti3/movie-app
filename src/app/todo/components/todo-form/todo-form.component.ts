@@ -13,7 +13,7 @@ import { Store } from '@ngrx/store';
 export class TodoFormComponent implements OnInit {
    formTodo:UntypedFormGroup;
 
-  constructor(private store: Store) {
+  constructor() {
    this.formTodo = new UntypedFormGroup({
         title: new UntypedFormControl(''),
     });

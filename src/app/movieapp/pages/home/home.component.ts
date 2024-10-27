@@ -22,13 +22,13 @@ import { CommonModule } from '@angular/common';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent {
-  movies$!: Observable<Movie[]>;
-  error$!: Observable<string | null>;
-  tvshows$!: Observable<TVShow[]>;
-  popularMovies$!: Observable<Movie[]>;
-  popularTVShows$!: Observable<TVShow[]>;
+  protected movies$!: Observable<Movie[]>;
+  protected error$!: Observable<string | null>;
+  protected  tvshows$!: Observable<TVShow[]>;
+  protected  popularMovies$!: Observable<Movie[]>;
+  protected  popularTVShows$!: Observable<TVShow[]>;
 
-  popupData$: Observable<{  visible: boolean,query?: string}>;
+  protected popupData$: Observable<{  visible: boolean,query?: string}>;
 
   constructor(private store: Store,private popupService: PopupService) {
     this.popupData$ = this.popupService.popupData$;

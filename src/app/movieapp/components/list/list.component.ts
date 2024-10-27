@@ -18,7 +18,7 @@ export class ListComponent implements AfterViewInit {
   private isDragging = false;
   private startX = 0;
   private scrollX = 0;
-   contentElement: any;
+   private contentElement: HTMLElement;
    private currentPage = 1;
 
    data$ = input.required<Observable<Movie[] | TVShow[]>>();

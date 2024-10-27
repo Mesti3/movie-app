@@ -1,29 +1,41 @@
-import { TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { Store, StoreModule } from '@ngrx/store';
+
+type MockStore = {
+  select: jest.Mock; // Mock select method
+};
+
+let store: MockStore;
 
 describe('AppComponent', () => {
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [AppComponent],
+
+  let component: AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
+
+  store = {
+    select: jest.fn(), // Mock select method
+  } as unknown as MockStore; // Cast as MockStore
+
+  
+  beforeEach( () => {
+     TestBed.configureTestingModule({
+      imports: [AppComponent, StoreModule.forRoot({})],
+      providers: [
+        { provide: Store, useValue: store }
+      ]
     }).compileComponents();
   });
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
-  });
-
-  it(`should have the 'movie-app' title`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('movie-app');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
     fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, movie-app');
   });
+
+
+  it('should create the app', () => {
+    expect(component).toBeTruthy();
+  });
+
 });

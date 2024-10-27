@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { TodoList } from '../interfaces/todo.interface';
 
 
-const baseURL:string = "https://671513e433bc2bfe40b95089.mockapi.io/api/v1/"
+const baseURL:string = "https://671513e433bc2bfe40b95089.mockapi.io/api/v1"
 
 
 @Injectable({ providedIn: 'root' })

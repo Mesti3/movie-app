@@ -14,10 +14,10 @@ import { TVShow } from '../../store/tv-shows/tv-show.model';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GridComponent {
-  data$ = input.required<Observable<Movie[] | TVShow[] | []>>();
-  error$ = input.required<Observable<string | null>>();
+   data$ = input.required<Observable<Movie[] | TVShow[] | []>>();
+   error$ = input.required<Observable<string | null>>();
   private currentPage: number = 1;
-  collectionName = input.required<string>();
+  collectionName$ = input.required<string>();
   loadNextPage = output<{collectionName: string, page: number}>();
   private scrollSubscription!: Subscription;
 
@@ -26,6 +26,7 @@ export class GridComponent {
   constructor(private elRef: ElementRef){}
   
   ngAfterViewInit(): void {
+    if(this.viewChildGrid && this.viewChildGrid.nativeElement){
     const gridElement = this.viewChildGrid.nativeElement.querySelector('.grid-resize') as HTMLElement;
 
     this.scrollSubscription = fromEvent(gridElement, 'scroll')
@@ -33,6 +34,7 @@ export class GridComponent {
       .subscribe(() => this.onScroll());
       
       this.onScroll();
+    }
   }
 
   private onScroll(): void {
@@ -41,7 +43,7 @@ export class GridComponent {
 
     if (scrollPosition >= maxScrollPosition * 0.99) {
       this.loadNextPage.emit({
-        collectionName: this.collectionName(),
+        collectionName: this.collectionName$(),
         page: ++this.currentPage,
       });
     }

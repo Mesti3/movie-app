@@ -15,9 +15,8 @@ import { selectAllTVShows, selectTVShowsError } from '../../store/tv-shows/tv-sh
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TvShowComponent{
-  tvshow$: Observable<Movie[]>;
-  error$: Observable<string | null>;
-  currentPage: number = 1;
+  protected tvshow$: Observable<Movie[]>;
+  protected error$: Observable<string | null>;
 
   constructor(private store: Store,private renderer: Renderer2) {}
 
@@ -27,7 +26,7 @@ export class TvShowComponent{
     this.error$ = this.store.select(selectTVShowsError);
   }
 
-  handleScroll(event: {collectionName: string, page: number}){
+  protected handleScroll(event: {collectionName: string, page: number}){
     this.store.dispatch(TVShowAction.getTVShow({page: event.page}));
   }
 }

@@ -13,8 +13,8 @@ import { GridComponent } from '../grid/grid.component';
   styleUrl: './pop-up.component.scss'
 })
 export class PopupComponent {
-  collection$!: Observable<Search[]>;
-  error$!: Observable<string | null>;
+  protected collection$!: Observable<Search[]>;
+  protected error$!: Observable<string | null>;
 
   close = output<void>();
   query = input<string>();

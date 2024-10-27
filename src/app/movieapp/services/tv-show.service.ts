@@ -9,7 +9,7 @@ import { headers,baseUrl } from '../config/config';
 })
 export class TVShowService {
   private apiTVSHow = 'discover/tv'; 
-  private apiPopularTVShow = 'movie/popular';
+  private apiPopularTVShow = 'tv/popular';
 
   private headersAPI = new HttpHeaders(headers)
 

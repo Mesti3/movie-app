@@ -14,8 +14,4 @@ export class ListItemComponent {
   overView = input.required<string>();
   releaseDate= input.required<string>();
 
-  handleClick = (e: Event) => {
-    
-  }
-
 }

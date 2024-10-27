@@ -1,0 +1,6 @@
+services:
+  movie-app:
+    container_name: movie-app
+    build: .
+    ports:
+    - '4200:4201'

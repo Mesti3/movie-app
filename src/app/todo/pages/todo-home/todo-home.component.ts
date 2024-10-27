@@ -22,14 +22,9 @@ import { TodoFormComponent } from '../../components/todo-form/todo-form.componen
 export class TodoHomeComponent implements OnInit {
   todos$: Observable<Todo[]>;
 
-  constructor(private store: Store) {
-      this.store.dispatch(getTodos());
-      this.todos$ = this.store.pipe(select(selectTodos));
+  constructor() {
   }
 
   ngOnInit(): void {}
 
-  deleteTodo(id: number) {
-      this.store.dispatch(deleteTodo({ id }));
-  }
 }
