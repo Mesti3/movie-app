@@ -1,0 +1,51 @@
+@import "./button.scss";
+@import "./input.scss";
+
+html {
+  overflow: hidden !important;
+}
+
+body {
+  overflow: hidden !important;
+}
+// Block: Header
+.header {
+  &__title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: $primary-color;
+    margin-bottom: 1rem;
+  }
+
+  &__subtitle {
+    font-size: 1.5rem;
+    color: $secondary-color;
+    margin-bottom: 0.5rem;
+  }
+}
+
+// Block: Alert
+.alert {
+  padding: 1rem;
+  border-radius: $border-radius;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  color: #fff;
+
+  &--success {
+    background-color: $success-color;
+  }
+
+  &--danger {
+    background-color: $danger-color;
+  }
+
+  &--warning {
+    background-color: $warning-color;
+  }
+
+  &--info {
+    background-color: $primary-color;
+  }
+}
+
