@@ -19,7 +19,6 @@
     }
 
     .navigation{
-        width: 60%;
         align-items: end;
         padding: 10px;
         
@@ -36,5 +35,13 @@
             }
 
         }
+
+        input{
+            width: max-content;
+        }
+    }
+
+    @media (max-width: 800px) {
+        flex-direction: column;
     }
 }

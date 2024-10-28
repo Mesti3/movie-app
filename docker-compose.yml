@@ -3,4 +3,4 @@ services:
     container_name: movie-app
     build: .
     ports:
-    - '4200:4201'
+    - '4200:4200'

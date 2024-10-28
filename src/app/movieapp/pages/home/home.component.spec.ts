@@ -178,7 +178,7 @@ describe('HomeComponent', () => {
   });
 
   it('should call closePopup in popupService when closePopup method is triggered', () => {
-    component.closePopup();
+    component["closePopup"]();
     expect(popupService.closePopup).toHaveBeenCalled();
   });
 

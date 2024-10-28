@@ -19,4 +19,10 @@ Whether you're looking for entertainment recommendations or simply want to stay 
 <span>
 Enjoy exploring the world of movies and TV shows!
    </span>
+
+   @if(popupData$ | async; as data  ){
+      @if(data.visible){
+      <app-pop-up [query]="data.query" (close)="closePopup()"></app-pop-up>
+      }
+      }
 </div>

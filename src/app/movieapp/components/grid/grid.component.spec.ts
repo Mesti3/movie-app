@@ -1,7 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { GridComponent } from './grid.component';
 import { of, Subscription } from 'rxjs';
-import { ComponentRef, ElementRef, input } from '@angular/core';
+import { ComponentRef, ElementRef } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('GridComponent', () => {
   let component: GridComponent;
@@ -11,7 +13,7 @@ describe('GridComponent', () => {
   beforeEach(async () => {
 
     await TestBed.configureTestingModule({
-      imports: [GridComponent],
+      imports: [GridComponent,BrowserAnimationsModule,NoopAnimationsModule],
       providers: [
         { provide: ElementRef, useValue: { nativeElement: document.createElement('div') } }
       ]
@@ -21,6 +23,7 @@ describe('GridComponent', () => {
     component = fixture.componentInstance;
     componentRef = fixture.componentRef;
 
+  
     const mockData = [{
       id: 1, title: 'Test Movie',
       overview: '',

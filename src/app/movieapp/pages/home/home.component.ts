@@ -31,7 +31,6 @@ export class HomeComponent {
   protected popupData$: Observable<{  visible: boolean,query?: string} | null>;
 
   constructor(private store: Store,private popupService: PopupService) {
-    this.popupData$ = this.popupService.popupData$;
   }
 
   ngOnInit(): void {
@@ -44,6 +43,7 @@ export class HomeComponent {
     this.tvshows$ = this.store.pipe(select(selectAllTVShows));
     this.popularMovies$ = this.store.pipe(select(selectPopularMovies));
     this.popularTVShows$ = this.store.pipe(select(selectPopularTVShows));
+    this.popupData$ = this.popupService.popupData$;
   }
 
   protected handleLoadNextPage(event: {collectionName: string, page: number}){
@@ -64,7 +64,7 @@ export class HomeComponent {
     }
   }
 
-  closePopup() {
+  protected closePopup() {
     this.popupService.closePopup();
   }
   

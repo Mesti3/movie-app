@@ -1,1 +1,8 @@
+<div>
 <app-grid [collectionName$]="'Movies'" [data$]="movies$" [error$]="error$" (loadNextPage)="handleScroll($event)"></app-grid>
+@if(popupData$ | async; as data  ){
+    @if(data.visible){
+    <app-pop-up [query]="data.query" (close)="closePopup()"></app-pop-up>
+    }
+    }
+</div>
