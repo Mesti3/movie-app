@@ -8,7 +8,9 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write 
+  contents: read
+  pages: write
+  id-token: write
 
 concurrency:
   group: "pages"
@@ -44,7 +46,7 @@ jobs:
         with:
           source: ./dist/movie-app
           destination: ./_site
-          
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
