@@ -16,13 +16,13 @@ jobs:
 
       - name: Prepare
         run: |
-          npm install -g @angular/cli
           npm install
           npm run build
           cd dist
           npm link
           cd ..
           cd ..
+          npm install -g @angular/cli
           ng new movie-app-gh --defaults
           cd movie-app-gh
           npm link angular-cli-ghpages
@@ -33,5 +33,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
         run: |
+          if [ "$(basename "$PWD")" != "movie-app-gh" ]; then
           cd movie-app-gh
+          fi
           ng deploy --name="The Movie app" --email="mesticky.jakub7@gmail.com" --cname=angular-cli-ghpages.angular.schule
