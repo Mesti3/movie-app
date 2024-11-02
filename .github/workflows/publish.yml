@@ -16,12 +16,10 @@ jobs:
 
       - name: Prepare
         run: |
-          cd src
           npm install
           npm run build
           cd dist
           npm link
-          cd ..
           cd ..
           npm install -g @angular/cli
           ng new movie-app --defaults
