@@ -33,7 +33,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
         run: |
-          if [ "$(basename "$PWD")" != "movie-app-gh" ]; then
-          cd movie-app-gh
-          fi
           ng deploy --name="The Movie app" --email="mesticky.jakub7@gmail.com" --cname=angular-cli-ghpages.angular.schule
