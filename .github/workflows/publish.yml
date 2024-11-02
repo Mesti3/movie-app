@@ -25,7 +25,7 @@ jobs:
           npm install -g @angular/cli
           ng new movie-app-gh --defaults
           cd movie-app-gh
-          git remote add origin https://github.com/Mesti3/movie-app.git
+          git remote add origin git@github.com:Mesti3/movie-app.git
           npm link angular-cli-ghpages
           ng add angular-cli-ghpages
 
