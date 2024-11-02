@@ -1,32 +1,39 @@
-name: Build and Deploy
+name: Build and test
 
 on:
   push:
-    branches:
-      - master
+    branches: [main]
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
-    - name: Checkout
-      uses: actions/checkout@v1
-    - uses: actions/setup-node@v1 #this installs node and npm for us
-      with:
-        node-version: '20.x'
-    - uses: actions/cache@v1
-      with:
-        path: ~/.npm
-        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-node-    
-    - name: Build
-      run: |
-        npm install
-        npm run deploy
-    - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@releases/v3
-      with:
-        GITHUB_TOKEN: ${{ secrets.TOKEN }}
-        BRANCH: gh-pages
-        FOLDER: dist/movie-app
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Prepare
+        run: |
+          cd src
+          npm install
+          npm run build
+          npm run test
+          cd dist
+          npm link
+          cd ..
+          cd ..
+          npm install -g @angular/cli
+          ng new movie-app --defaults
+          cd movie-app
+          npm link angular-cli-ghpages
+          ng add angular-cli-ghpages
+
+      - name: Deploy
+        if: github.ref == 'refs/heads/main'
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        run: |
+          cd movie-app
+          ng deploy --name="The Buildbot" --email="mesticky.jakub7@gmail.com" --cname=angular-cli-ghpages.angular.schule
