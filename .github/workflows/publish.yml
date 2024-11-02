@@ -16,7 +16,6 @@ jobs:
 
       - name: Prepare
         run: |
-          cd src
           npm install
           npm run build
           cd dist
