@@ -22,6 +22,7 @@ jobs:
           cd dist
           npm link
           cd ..
+          cd ..
           ng new movie-app --defaults
           cd movie-app
           npm link angular-cli-ghpages
