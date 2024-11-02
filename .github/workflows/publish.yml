@@ -1,8 +1,8 @@
-name: Build and deploy
+name: Build and test
 
 on:
   push:
-    branches: [master]
+    branches: [main]
 
 jobs:
   build-and-deploy:
@@ -16,8 +16,10 @@ jobs:
 
       - name: Prepare
         run: |
+          cd src
           npm install
           npm run build
+          npm run test
           cd dist
           npm link
           cd ..
@@ -33,4 +35,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
         run: |
-          ng deploy --name="The Movie app" --email="mesticky.jakub7@gmail.com" --cname=angular-cli-ghpages.angular.schule
+          echo $PWD
+          cd movie-app-gh
+          ng deploy --name="The Buildbot" --email="mesticky.jakub7@gmail.com" --cname=angular-cli-ghpages.angular.schule
