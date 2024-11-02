@@ -1,4 +1,4 @@
-name: Build and test
+name: Build and deploy
 
 on:
   push:
@@ -16,12 +16,12 @@ jobs:
 
       - name: Prepare
         run: |
+          npm install -g @angular/cli
           npm install
           npm run build
           cd dist
           npm link
           cd ..
-          npm install -g @angular/cli
           ng new movie-app --defaults
           cd movie-app
           npm link angular-cli-ghpages
