@@ -1,0 +1,22 @@
+// Block: Form Inputs
+.input {
+    &__field {
+      padding: 0.6rem;
+      font-size: 1rem;
+      border: 1px solid $secondary-color;
+      border-radius: $border-radius;
+      transition: border-color 0.3s;
+  
+      &:focus {
+        border-color: $primary-color;
+        outline: none;
+      }
+    }
+  
+    &__label {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      display: inline-block;
+    }
+  }
+  

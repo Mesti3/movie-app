@@ -1,0 +1,46 @@
+.header{
+    background-color: black;
+    top: 0;
+    padding: 10px;
+    display: flex;
+    position: sticky;
+    z-index: 10;
+
+    .logo{
+        width: 40%;
+        margin: auto;
+
+        h2 {
+            width: max-content;
+            color: white;
+            font-size: xx-large;
+        }
+    }
+
+    .navigation{
+        align-items: end;
+        
+        nav {
+            width: max-content;
+            margin: auto;
+
+            a {
+                color: white;
+            }
+
+            a:focus, a:hover {
+                color: gray;
+            }
+
+        }
+
+    }
+
+    @media (max-width: 800px) {
+        flex-direction: column;
+
+        .logo{
+            width: auto
+        }
+    }
+}

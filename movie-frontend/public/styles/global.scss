@@ -1,0 +1,27 @@
+// Variables
+$primary-color: #007BFF;    // Primary blue color
+$secondary-color: #6C757D;  // Secondary grey
+$success-color: #28A745;    // Success green
+$danger-color: #DC3545;     // Danger red
+$warning-color: #FFC107;    // Warning yellow
+$light-color: #F8F9FA;      // Light grey background
+$dark-color: #343A40;       // Dark grey text
+$border-radius: 4px;        // Rounded corners
+$font-family: 'Helvetica Neue', sans-serif;
+$font-size-base: 16px;
+
+// General Styles
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: $font-family;
+}
+
+body {
+  font-size: $font-size-base;
+  color: $light-color;
+  background-color: $dark-color;
+  line-height: 1.6;
+}
+

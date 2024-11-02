@@ -1,0 +1,10 @@
+<div class="overlay" (click)="closePopup()"></div>
+<div class="popup" (click)="$event.stopPropagation()">
+  <app-grid
+    [collectionName$]="'Popup'"
+    [data$]="collection$"
+    [error$]="error$"
+    (loadNextPage)="handleScroll($event)"
+  ></app-grid>
+  <button (click)="closePopup()">Close</button>
+</div>

@@ -1,0 +1,34 @@
+.list-basic {
+  overflow: hidden;
+  white-space: nowrap;
+
+  .list-scroll {
+    width: 100%;
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+  }
+
+  .list-title{
+    color: white;
+    font-size: xx-large;
+  }
+
+  .no-scroll::-webkit-scrollbar {
+    display: none; /* Hide the scrollbar on Chrome, Safari, and Opera */
+  }
+  
+  .no-scroll::-webkit-scrollbar-thumb {
+    display: none; /* Hide the scrollbar thumb on Chrome, Safari, and Opera */
+  }
+  
+  .no-scroll::-moz-scrollbar {
+    display: none; /* Hide the scrollbar on Firefox */
+  }
+  
+  .no-scroll::-moz-scrollbar-thumb {
+    display: none; /* Hide the scrollbar thumb on Firefox */
+  }
+
+}

@@ -1,0 +1,20 @@
+.about{
+    padding: 10px;
+    height: 100vh;
+    color: white;
+    text-align: center;
+    
+    h2{
+        width: max-content;
+        margin: auto;
+        padding: 10px;
+    }
+
+    span{
+        justify-content: center;
+        padding: 10px;
+        width: max-content;
+        margin: auto;
+        white-space: pre-wrap;
+    }
+}

@@ -1,0 +1,28 @@
+<div class="about">
+   <h2>About the Movie & TV App</h2>
+   <span>
+Welcome to the Movie & TV App, a user-friendly platform designed to give you quick access to the top-rated movies and TV shows. Whether you're looking for the latest blockbusters or critically acclaimed TV series, our app provides a streamlined experience to help you discover and explore your favorite content.
+</span>
+<span>
+Key Features:
+Top 10 Movies & TV Shows: Instantly browse the top 10 rated movies and TV shows in just a few clicks.
+Search Functionality: Search through an extensive database of movies and TV shows from TheMovieDB API. The app delivers results as you type, ensuring real-time feedback.
+Responsive Design: The app adapts to various screen sizes, offering a seamless experience on both desktop and mobile devices.
+Detailed View: Dive deeper into each movie or TV show with individual item pages showcasing detailed information such as synopsis, release date, and ratings.
+Infinite Scrolling: Enjoy a continuous browsing experience with infinite scrolling for loading additional content as you reach the end of the page.
+Technology Stack:
+This application is built using the latest stable version of Angular, leveraging NgRx for state management and RxJS for reactive programming. Styling is handled with SCSS following BEM (Block Element Modifier) methodology, ensuring clean and maintainable styles. The app also utilizes Angular animations for smooth transitions and enhances the user experience through modern Angular Signals.
+</span>
+<span>
+Whether you're looking for entertainment recommendations or simply want to stay updated on trending content, the Movie & TV App delivers an easy-to-use and visually appealing solution.
+</span>
+<span>
+Enjoy exploring the world of movies and TV shows!
+   </span>
+
+   @if(popupData$ | async; as data  ){
+      @if(data.visible){
+      <app-pop-up [query]="data.query" (close)="closePopup()"></app-pop-up>
+      }
+      }
+</div>
