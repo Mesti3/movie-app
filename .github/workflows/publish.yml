@@ -18,10 +18,13 @@ jobs:
         run: |
           npm install
           npm run build
+          npm install -g @angular/cli
+          npm install -g angular-cli-ghpages
+          ng build --prod --base-href https://Mesti3.github.io/movie-app/
 
-      - name: Deploy to GitHub Pages (Secure)
-        uses: actions/deploy-pages@v1
-        with:
-          token: ${{ secrets.TOKEN }}
-          branch: gh-pages         
-          folder: dist
+      - name: Deploy
+        if: github.ref == 'refs/heads/master'
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        run: |
+          ngh --no-silent
