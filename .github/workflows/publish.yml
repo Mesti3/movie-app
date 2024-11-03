@@ -21,6 +21,8 @@ jobs:
           npm install -g @angular/cli
           npm install -g angular-cli-ghpages
           ng build --base-href https://mesti3.github.io/movie-app/
+          git config --global user.email "mesticky.jakub7@gmail.com"
+          git config --global user.name "Jakub Mesticky"
 
       - name: Deploy
         if: github.ref == 'refs/heads/master'
