@@ -33,6 +33,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
         run: |
-          echo $PWD
+          cd ..
+          cd ..
           cd movie-app-gh
           ng deploy --name="The Buildbot" --email="mesticky.jakub7@gmail.com" --cname=angular-cli-ghpages.angular.schule

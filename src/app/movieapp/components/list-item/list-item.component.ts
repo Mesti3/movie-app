@@ -13,5 +13,4 @@ export class ListItemComponent {
   title = input.required<string>();
   overView = input.required<string>();
   releaseDate= input.required<string>();
-
 }

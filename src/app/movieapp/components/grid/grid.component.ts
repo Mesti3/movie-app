@@ -4,6 +4,7 @@ import {
   ElementRef,
   input,
   output,
+  viewChild,
   ViewChild,
 } from '@angular/core';
 import { trigger, transition, style, animate, query, stagger, keyframes } from '@angular/animations';
@@ -44,20 +45,20 @@ import { TVShow } from '../../store/tv-shows/tv-show.model';
   ],
 })
 export class GridComponent {
+  private currentPage: number = 1;
+  private scrollSubscription!: Subscription;
   data$ = input.required<Observable<Movie[] | TVShow[] | []>>();
   error$ = input.required<Observable<string | null>>();
-  private currentPage: number = 1;
   collectionName$ = input.required<string>();
   loadNextPage = output<{ collectionName: string; page: number }>();
-  private scrollSubscription!: Subscription;
 
-  @ViewChild('grid') viewChildGrid!: ElementRef;
+   viewChildGrid = viewChild<ElementRef>('grid')
 
   constructor(private elRef: ElementRef) {}
 
   ngAfterViewInit(): void {
-    if (this.viewChildGrid && this.viewChildGrid.nativeElement) {
-      const gridElement = this.viewChildGrid.nativeElement.querySelector(
+    if (this.viewChildGrid && this.viewChildGrid().nativeElement) {
+      const gridElement = this.viewChildGrid().nativeElement.querySelector(
         '.grid-resize'
       ) as HTMLElement;
 
