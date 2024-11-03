@@ -36,4 +36,4 @@ jobs:
         run: |
           cd ..
           cd movie-app-gh
-          ng deploy --name="The Buildbot" --email="mesticky.jakub7@gmail.com" --cname=angular-cli-ghpages.angular.schule
+          ng deploy --base-href=/movie-app/
