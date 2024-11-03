@@ -22,6 +22,6 @@ jobs:
       - name: Deploy to GitHub Pages (Secure)
         uses: actions/deploy-pages@v1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.TOKEN }}
           branch: gh-pages         
           folder: dist
