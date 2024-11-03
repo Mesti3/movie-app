@@ -1,0 +1,39 @@
+name: Build and test
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Prepare
+        run: |
+          npm install
+          npm run build
+          cd dist
+          npm link
+          cd ..
+          cd ..
+          npm install -g @angular/cli
+          ng new movie-app-gh --defaults
+          cd movie-app-gh
+          npm link angular-cli-ghpages
+          ng add angular-cli-ghpages
+
+      - name: Deploy
+        if: github.ref == 'refs/heads/master'
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        run: |
+          cd ..
+          cd ..
+          cd movie-app-gh
+          ng deploy --name="The Buildbot" --email="mesticky.jakub7@gmail.com" --cname=angular-cli-ghpages.angular.schule
