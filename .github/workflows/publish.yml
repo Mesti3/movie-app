@@ -20,7 +20,7 @@ jobs:
           npm run build
           npm install -g @angular/cli
           npm install -g angular-cli-ghpages
-          ng build --prod --base-href https://Mesti3.github.io/movie-app/
+          ng build --base-href https://Mesti3.github.io/movie-app/
 
       - name: Deploy
         if: github.ref == 'refs/heads/master'
