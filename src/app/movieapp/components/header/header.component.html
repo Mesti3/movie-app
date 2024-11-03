@@ -1,13 +1,13 @@
 <header class="header">
   <div class="logo">
-    <h2>Movie app</h2>
+    <img src="../../assets/logo_bog.png" alt="go_stream_logo" loading="eager"/>
   </div>
   <div class="navigation">
     <nav>
-      <a href="/home" class="btn --primary" routerLink="/">Home</a>
-      <a  href="/movies" class="btn --primary" routerLink="/movies">Movies</a>
-      <a  href="/tv-shows" class="btn --primary" routerLink="/tv-shows">TV shows</a>
-      <a  href="/about" class="btn --primary" routerLink="/about">About</a>
+      <a href="/movie-app/home" class="btn --primary" routerLink="/">Home</a>
+      <a  href="/movie-app/movies" class="btn --primary" routerLink="/movies">Movies</a>
+      <a  href="/movie-app/tv-shows" class="btn --primary" routerLink="/tv-shows">TV shows</a>
+      <a  href="/movie-app/about" class="btn --primary" routerLink="/about">About</a>
 
       <form [formGroup]="searchForm">
       <input type="text" class="input __field" placeholder="Search" formControlName="search"/>

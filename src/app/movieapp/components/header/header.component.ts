@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, ViewContainerRef } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { debounceTime, filter } from 'rxjs';
 import * as SearchAction from '../../store/search/search.action';
@@ -15,6 +15,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeaderComponent {
+ // protected drp = inject('container')
   protected searchForm = new FormGroup({
     search: new FormControl('', [Validators.required, searchValidator])
   })
